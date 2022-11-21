@@ -19,8 +19,7 @@ app.get('/', (req, res) => res.render('home'));
 app.get('/news', (req, res) => res.render('news'));
 
 app.get('/search', (req, res) => {
-    console.log(req.querygit);
-    res.render('search')
+    res.render('search');ẽit
 });
  
 
