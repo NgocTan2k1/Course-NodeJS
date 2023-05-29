@@ -8,7 +8,11 @@ const app = express()
 const port = 3000
 
 app.use(express.static(path.join(__dirname, 'public')));
-console.log(path.join(__dirname, 'public'))
+app.use(express.urlencoded({
+  extended: true,
+}));
+app.use(express.json());
+
 // HTTP logger
 app.use(morgan('combined'));
 
@@ -26,7 +30,18 @@ app.get('/home', (req, res) => {
 
 app.get('/news', (req, res) => {
   res.render('news');
-})
+});
+
+app.get('/search', (req, res) => {
+  console.log(req.query.q);
+  console.log(req.query.sex);
+  console.log(req.query.ref);
+  res.render('search');
+});
+
+app.post('/search', (req, res) => {
+  res.send(`Name: ${req.body.q}, Gender: ${req.body.gender}`);
+});
 
 app.get('/', (req, res) => {
   res.render('helloworld')
