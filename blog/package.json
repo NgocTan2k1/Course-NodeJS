@@ -10,7 +10,7 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "lint-staged": {
-        "src/**/*.{js,json,scss}": "prettier --trailing-comma all --arrow-parens always --bracket-same-line --no-bracket-spacing --embedded-language-formatting=auto --html-whitespace-sensitivity css --insert-pragma false --jsx-single-quote false --print-width 120 --prose-wrap preserve --quote-props as-needed --require-pragma false --single-quote true --tab-width 4 --use-tabs false --vue-indent-script-and-style false --write "
+        "src/**/*.{js,json,scss}": "prettier --trailing-comma all --arrow-parens always --bracket-same-line --no-bracket-spacing --embedded-language-formatting=auto --html-whitespace-sensitivity css --insert-pragma false --jsx-single-quote false --print-width 120 --prose-wrap preserve --quote-props as-needed --require-pragma false --single-quote true --tab-width 4 --use-tabs false --vue-indent-script-and-style false --write"
     },
     "husky": {
         "hooks":{
