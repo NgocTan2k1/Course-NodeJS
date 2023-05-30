@@ -9,7 +9,7 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "lint-staged": {
-        "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write docs package.json"
+        "src/**/*.{js,json,scss}": "prettier --single-quote true --trailing-comma all --arrow-parens true --bracket-Same-line --bracket-spacing true --embedded-language-formatting auto --html-whitespace-sensitivity css --insert-pragma --jsx-single-quote --print-width 120 --prose-wrap preserve --quote-props as-needed --require-pragma --semi true --tab-width 4 --use-tabs --vue-indent-script-and-style  --write "
     },
     "husky": {
         "hooks":{
