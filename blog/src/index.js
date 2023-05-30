@@ -3,6 +3,8 @@ const express = require('express');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const exp = require('constants');
+const Route = require('./routes');
+
 
 const app = express()
 const port = 3000
@@ -16,37 +18,17 @@ app.use(express.json());
 // HTTP logger
 app.use(morgan('combined'));
 
-// Template engine
-
+// Template engine & set file 
 app.engine('hbs', handlebars.engine({
   extname: ".hbs"
 }));
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, '/resources/views'));
 
-app.get('/home', (req, res) => {
-  res.render('home');
-})
+// Route init
+Route(app);
 
-app.get('/news', (req, res) => {
-  res.render('news');
-});
-
-app.get('/search', (req, res) => {
-  console.log(req.query.q);
-  console.log(req.query.sex);
-  console.log(req.query.ref);
-  res.render('search');
-});
-
-app.post('/search', (req, res) => {
-  res.send(`Name: ${req.body.q}, Gender: ${req.body.gender}`);
-});
-
-app.get('/', (req, res) => {
-  res.render('helloworld')
-})
-
+// run server
 app.listen(port, () => {
   console.log(`Example app listening on port: http://127.0.0.1:${port}`)
 })
