@@ -4,7 +4,7 @@
     "description": "",
     "main": "src/index.js",
     "scripts": {
-        "beautiful": "lint-staged",
+        "format-code": "prettier --trailing-comma all --arrow-parens always --bracket-same-line --no-bracket-spacing --embedded-language-formatting=auto --html-whitespace-sensitivity css --insert-pragma false --jsx-single-quote false --print-width 120 --prose-wrap preserve --quote-props as-needed --require-pragma false --single-quote true --tab-width 4 --use-tabs false --vue-indent-script-and-style false --write src/**/*.{js,json,scss}",
         "start": "nodemon --inspect src/index.js",
         "watch": "node-sass -w src/resources/scss/ -o src/public/css/",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,13 +13,14 @@
         "src/**/*.{js,json,scss}": "prettier --trailing-comma all --arrow-parens always --bracket-same-line --no-bracket-spacing --embedded-language-formatting=auto --html-whitespace-sensitivity css --insert-pragma false --jsx-single-quote false --print-width 120 --prose-wrap preserve --quote-props as-needed --require-pragma false --single-quote true --tab-width 4 --use-tabs false --vue-indent-script-and-style false --write"
     },
     "husky": {
-        "hooks":{
+        "hooks": {
             "pre-commit": "lint-staged"
         }
     },
     "dependencies": {
         "express": "^4.18.2",
-        "express-handlebars": "^7.0.7"
+        "express-handlebars": "^7.0.7",
+        "mongoose": "^7.2.2"
     },
     "devDependencies": {
         "husky": "^8.0.3",

@@ -3,10 +3,10 @@ const router = express.Router();
 
 const siteController = require('../app/controllers/SiteController.js');
 
-router.use('/search', siteController.search);
+router.get('/search', siteController.search);
 
-router.use('/home', siteController.home);
+router.get('/home', siteController.home);
 
-router.use('/', siteController.index);
+router.get('/', siteController.index);
 
 module.exports = router;
