@@ -14,6 +14,7 @@ class SiteController {
                 res.render('home', {
                     courses: mutipleMongooseToObject(courses),
                 });
+                // res.json(courses);
             })
             .catch((err) => next(err));
 
